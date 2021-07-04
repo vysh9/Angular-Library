@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8">
+		<title>Library</title>
+		<meta name="generator" content="Bootply" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<link href="/assets/css/bootstrap.min.css" rel="stylesheet">
+		
+		<!--[if lt IE 9]>
+			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+		<link href="/assets/css/styles.css" rel="stylesheet">
+	</head>
+	<body>
+<header class="navbar navbar-bright navbar-fixed-top" role="banner">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a href="/" class="navbar-brand">Home</a>
+    </div>
+    <nav class="collapse navbar-collapse" role="navigation">
+      <ul class="nav navbar-nav">
+        <li>
+          <a routerLink="/books">Books</a>
+        </li>
+        <li>
+            <a routerLink="/authors">Authors</a>
+        </li>
+        <li>
+          <a routerLink="/addbook">Add Book</a>
+      </li>
+        <li>
+            <a routerLink="/signin">SignIn</a>
+        </li>
+        <li>
+          <a routerLink="/register">Register</a>
+      </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<form ngNativeValidate class="contain" #login="ngForm" (ngSubmit)="submit(login)">
+  <h2>LOGIN</h2>
+  <div class="form-group" >
+    <label for="email">Email address</label>
+    <input type="email" login="ngModel" class="form-control" id="email" placeholder="Email" required>
+    <div *ngIf="login.touched && !login.valid" class="alert alert-danger">email is required</div>
+  </div>
+  <div class="form-group">
+    <label for="password">Password</label>
+    <input type="password" login="ngModel"  class="form-control" placeholder="Password" required>
+    <div *ngIf="login.touched && !login.valid" class="alert alert-danger">email is required</div>
+  </div>
+  <button  class="btn btn-primary">LogIn</button>
+</form>
+</body>
+</html>
+
